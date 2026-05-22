@@ -1,0 +1,2 @@
+﻿  main.cpp
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit2-a\unit2-a\main.cpp(4,13): error C3874: 'main' の戻り値の型には、'int' を使用してください。'const char *' は使用できません

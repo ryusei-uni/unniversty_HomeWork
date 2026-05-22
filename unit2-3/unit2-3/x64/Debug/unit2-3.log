@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit2-3\unit2-3\main.cpp(4,16): error C2117: 'str': 指定された配列には、初期化子が多すぎます。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit2-3\unit2-3\main.cpp(4,7):
+      'str' の宣言を確認してください
+  

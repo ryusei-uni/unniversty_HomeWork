@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\DXTemplate\DXTemplate\main.cpp(25,13): error C2660: 'DxLib::DrawPixel': 関数に 0 個の引数を指定できません。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\lib\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(2877,15):
+      'DxLib::DrawPixel' の宣言を確認してください
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\DXTemplate\DXTemplate\main.cpp(25,13):
+      引数リスト '()' を一致させようとしているとき
+  
