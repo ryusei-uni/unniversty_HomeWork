@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="player.bmp">
+    <Image Include="..\..\..\..\..\..\..\デスクトップ\動画\プロジェクト\BMP\256_jiki_31.bmp">
       <Filter>ソース ファイル\image</Filter>
     </Image>
   </ItemGroup>
