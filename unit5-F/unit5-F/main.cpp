@@ -38,11 +38,13 @@ bool judgeGameOver(int life) {
 	
 
 
-	if (life <= 0 ) return TRUE;
+	if (life <= 0 || !judgeObjectArea(px,py,0,h,w,h-h)) return TRUE;
 	return FALSE;
 }
 
-void Wall(int x,int y, int w, int h,bool damege) {
+
+
+void Wall(int x,int y, int w,int h,bool damege) {
 	int Color = GetColor(255, 255, 255);
 	if (damege) Color = GetColor(255,0,0);
 	DrawBox(x, y, w, h,Color,TRUE);
@@ -139,8 +141,7 @@ double GameAreaResetY(double py, int game_areaH) {
 //}
 //自機コントロール
 void Control() {
-	int charSize = 256 / 4;
-	const double offset_h = 32.0; // 自機の縦幅 (256/4)
+
 
 	if (CheckHitKey(KEY_INPUT_LSHIFT)) PSpeed /= PSpeed; else PSpeed = defelt_pseed;
 	if (CheckHitKey(KEY_INPUT_LEFT))  px -= PSpeed;

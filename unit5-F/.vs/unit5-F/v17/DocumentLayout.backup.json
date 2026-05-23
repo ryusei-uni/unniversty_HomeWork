@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "I:\\document\\Workspace\\VisualStudio\\CPP\\unniversty_HomeWork\\unit5-F\\",
+  "WorkspaceRootPath": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unniversty_HomeWork\\unit5-F\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE2FDD3B-E4E5-4575-8D65-3CCD10F6F0D9}|unit5-F\\unit5-F.vcxproj|I:\\document\\Workspace\\VisualStudio\\CPP\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FE2FDD3B-E4E5-4575-8D65-3CCD10F6F0D9}|unit5-F\\unit5-F.vcxproj|C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FE2FDD3B-E4E5-4575-8D65-3CCD10F6F0D9}|unit5-F\\unit5-F.vcxproj|solutionrelative:unit5-F\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "I:\\document\\Workspace\\VisualStudio\\CPP\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp",
               "RelativeDocumentMoniker": "unit5-F\\main.cpp",
-              "ToolTip": "I:\\document\\Workspace\\VisualStudio\\CPP\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp",
+              "ToolTip": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unniversty_HomeWork\\unit5-F\\unit5-F\\main.cpp",
               "RelativeToolTip": "unit5-F\\main.cpp",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAAADYAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-22T00:16:35.246Z",
               "EditorCaption": ""
