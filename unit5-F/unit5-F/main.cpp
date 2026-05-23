@@ -1,50 +1,64 @@
 #include "dxlib.h"
 #include <stdbool.h>
 #include <stdio.h>
-
-#define PSpeed 2
-#define Gravity 1
+#define defelt_pseed 2
 #define Jumpforce 3
-#define life 3
-double JumpPower;
-int  cw,ch,w,h,px,py; 
+#define Gravity 1//1
+#define Dlife 3
+int charSize = 256 / 4;
+const double offset_w = charSize / 2;
+const double offset_h = charSize / 2;
+double JumpPower, px, py, PSpeed = 2;
+int  cw,ch,w,h,life; 
 int PushStartTime = 0;
 int EscapeProgress = 0;
-//エリア感知
-bool judgeGameAreaScreen(double px, double py, int game_areaW, int game_areaH) {
+
+
+
+
+
+	/*bool judgeGameAreaScreen(double px, double py, int game_areaW, int game_areaH) {
 	const double offset = 32.0;
 
 	return px >= -offset &&
 		py >= -offset &&
 		px <= (game_areaW - offset) &&
 		py <= (game_areaH - offset);
+	}*/
+
+
+bool judgeObjectArea(double px, double py, int ObjectX, int ObjectY, int ObjectW, int ObjectH) {
+	const double offset = 32.0;
+	return  ObjectX <= px + offset && px + offset <= ObjectW &&
+		ObjectY <= py + offset && py + offset <= ObjectH;
 }
 
-
-bool judgeGameOver(double px, double py, int ObjectX, int ObjectY, int ObjectW, int ObjectH) {
-	return  ObjectX <= px && px <= ObjectW &&
-		ObjectY <= py && py <= ObjectH;
+//ライフが0以下の場合ゲームオーバー、ゲームオーバーでTUREを返す
+bool judgeGameOver(int life) {
 	
 
+
+	if (life <= 0 ) return TRUE;
+	return FALSE;
 }
 
 void Wall(int x,int y, int w, int h,bool damege) {
 	int Color = GetColor(255, 255, 255);
-	if (TRUE) Color = GetColor(255,0,0);
+	if (damege) Color = GetColor(255,0,0);
 	DrawBox(x, y, w, h,Color,TRUE);
 }
 
 void Object(double px, double py, int ObjectX, int ObjectY, int ObjectW, int ObjectH) {
-	Wall(ObjectX, ObjectY, ObjectW, ObjectH);
-	judgeGameOver(px, py,ObjectX,ObjectY,ObjectW,ObjectH);
+	Wall(ObjectX, ObjectY, ObjectW, ObjectH, judgeObjectArea(px, py, ObjectX, ObjectY, ObjectW, ObjectH));
+	
 }
 //コントロール再起
-// void ReGameAreaEnd(int px, int game_areaW) {
-//	const double offset = 32.0;
-//
-//	if (px < -offset) px += 1;
-//	if (px > game_areaW -offset) px -= 1;
-//}
+ /*void ReGameAreaEnd(int px, int game_areaW) {
+	const double offset = 32.0;
+
+	if (px < -offset) px += 1;
+	if (px > game_areaW -offset) px -= 1;
+	}*/
 
 //指定の時間ESCを押しているとゲームを閉じる
 int Esc(int EscProgressX_size) {
@@ -93,17 +107,80 @@ int Esc(int EscProgressX_size) {
 	if (EscapeProgress >= EscProgressX_size)return 1;
 	return 0;
 }
-//自機コントロール
-void Control(){
-	if (CheckHitKey(KEY_INPUT_LEFT)&&judgeGameAreaScreen(px,py,w,h)) px -= PSpeed;
-	if (CheckHitKey(KEY_INPUT_RIGHT) && judgeGameAreaScreen(px, py, w, h)) px += PSpeed;
-	if (CheckHitKey(KEY_INPUT_SPACE)&& judgeGameAreaScreen(px, py, w, h)) py = py -Jumpforce;
-	//if (CheckHitKey(KEY_INPUT_UP) && judgeGameAreaScreen(px, py, w, h)) py -= PSpeed;
-	//if (CheckHitKey(KEY_INPUT_DOWN) && judgeGameAreaScreen(px, py, w, h)) py += PSpeed;
 
 
-	
+//キャラクターを画面外に行けなくする（プレイヤー操作のみ）
+// X座標を画面内に戻して返す関数
+double GameAreaResetX(double px, int game_areaW) {
+
+	if (px < -offset_w) return -offset_w;
+	if (px > game_areaW - charSize + offset_w) return game_areaW - charSize + offset_w;
+	return px;
 }
+
+// Y座標を画面内に戻して返す関数
+double GameAreaResetY(double py, int game_areaH) {
+	
+	if (py < -offset_h) return -offset_h;
+
+	//if (py > game_areaH - charSize + offset_h) return game_areaH - charSize + offset_h;
+	return py;
+}
+//void Control(){
+//	if (CheckHitKey(KEY_INPUT_LSHIFT)) PSpeed /= PSpeed ; else PSpeed = defelt_pseed;
+//	if (CheckHitKey(KEY_INPUT_LEFT)&&judgeGameAreaScreen(px,py,w,h)) px -= PSpeed;
+//	if (CheckHitKey(KEY_INPUT_RIGHT) && judgeGameAreaScreen(px, py, w, h)) px += PSpeed;
+//	if (CheckHitKey(KEY_INPUT_SPACE)&& judgeGameAreaScreen(px, py, w, h)) py = py -Jumpforce;
+//	if (CheckHitKey(KEY_INPUT_UP) && judgeGameAreaScreen(px, py, w, h)) py -= PSpeed;
+//	if (CheckHitKey(KEY_INPUT_DOWN) && judgeGameAreaScreen(px, py, w, h)) py += PSpeed;
+//
+//
+//	
+//}
+//自機コントロール
+void Control() {
+	int charSize = 256 / 4;
+	const double offset_h = 32.0; // 自機の縦幅 (256/4)
+
+	if (CheckHitKey(KEY_INPUT_LSHIFT)) PSpeed /= PSpeed; else PSpeed = defelt_pseed;
+	if (CheckHitKey(KEY_INPUT_LEFT))  px -= PSpeed;
+	if (CheckHitKey(KEY_INPUT_RIGHT)) px += PSpeed;
+	if (CheckHitKey(KEY_INPUT_SPACE)) py -= Jumpforce;
+
+	//if (CheckHitKey(KEY_INPUT_UP))    py -= PSpeed;
+	//if (CheckHitKey(KEY_INPUT_DOWN))  py += PSpeed;
+	px = GameAreaResetX(px, w);
+	py = GameAreaResetY(py, h);
+
+	/*if (CheckHitKey(KEY_INPUT_DOWN)&& (py > h - charSize + offset_h)) {
+		py = h - charSize + offset_h;
+	}*/
+
+}
+
+//キャラクターを画面外に行けなくする（プレイヤー操作のみ）
+//void GameAreaResets(double* px, double* py, int game_areaW, int game_areaH) {
+//	const double offset = 32.0; // 画像の左上を基準にする場合は0.0、中央基準なら調整
+//	int charSize = 256 / 4;    // 描画しているサイズ (64)
+//
+//	// X座標の制限
+//	if (*px  < -offset) {
+//		*px  = -offset;
+//	}
+//	if (*px > game_areaW - charSize + offset) {
+//		*px = game_areaW - charSize + offset;
+//	}
+//
+//	// Y座標の制限（上下も同様に制御する場合）
+//	if (*py < -offset) {
+//		*py = -offset;
+//	}
+//	if (*py > game_areaH - charSize + offset) {
+//		*py = game_areaH - charSize + offset;
+//	}
+//}
+
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	
@@ -123,9 +200,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//メインループ
 	while (ProcessMessage() == 0) {
 		DrawBox(-10, -10, 500, 500,GetColor(255,255,255),TRUE);
-
-		py += Gravity;
 		Control();
+		py += Gravity;
 		/*ReGameAreaEnd(px, w);*/
 		ClearDrawScreen();
 		

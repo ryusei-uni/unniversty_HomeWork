@@ -1,2 +1,6 @@
 ﻿  main.cpp
+I:\document\Workspace\VisualStudio\CPP\unniversty_HomeWork\unit5-F\unit5-F\main.cpp(208,39): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+I:\document\Workspace\VisualStudio\CPP\unniversty_HomeWork\unit5-F\unit5-F\main.cpp(208,28): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+I:\document\Workspace\VisualStudio\CPP\unniversty_HomeWork\unit5-F\unit5-F\main.cpp(208,22): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+I:\document\Workspace\VisualStudio\CPP\unniversty_HomeWork\unit5-F\unit5-F\main.cpp(208,19): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
   unit5-F.vcxproj -> I:\document\Workspace\VisualStudio\CPP\unniversty_HomeWork\unit5-F\x64\Debug\unit5-F.exe
