@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unit\\unit6-a\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2845DBDF-07FF-4963-BC86-E5D0BA4DF79B}|unit6-a\\unit6-a.vcxproj|C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unit\\unit6-a\\unit6-a\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2845DBDF-07FF-4963-BC86-E5D0BA4DF79B}|unit6-a\\unit6-a.vcxproj|solutionrelative:unit6-a\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unit\\unit6-a\\unit6-a\\main.cpp",
+              "RelativeDocumentMoniker": "unit6-a\\main.cpp",
+              "ToolTip": "C:\\Users\\universitypcryusei\\Documents\\workspace\\VisualStudio\\unit\\unit6-a\\unit6-a\\main.cpp",
+              "RelativeToolTip": "unit6-a\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-25T04:31:45.003Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
