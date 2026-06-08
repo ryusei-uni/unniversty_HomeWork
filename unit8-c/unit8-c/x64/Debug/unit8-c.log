@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit8-c\unit8-c\main.cpp(13,10): warning C4477: 'scanf_s' : 書式文字列 '%s' には、型 'unsigned int' の引数が必要ですが、可変個引数 2 は型 'size_t' です
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit8-c\unit8-c\main.cpp(13,10):
+      この引数はバッファー サイズとして使用されます
+  
+  unit8-c.vcxproj -> C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit8-c\x64\Debug\unit8-c.exe

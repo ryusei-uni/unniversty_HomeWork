@@ -1,0 +1,34 @@
+﻿  main.cpp
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(11,9): warning C4477: 'printf' : 書式文字列 '%d' には、型 'int' の引数が必要ですが、可変個引数 1 は型 'size_t' です
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(11,9):
+      書式文字列に '%zd' を使用することをお勧めします
+  
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10): warning C4477: 'scanf_s' : 書式文字列 '%s' には、型 'char *' の引数が必要ですが、可変個引数 1 は型 'char *(*)[100]' です
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10):
+      この引数は変換指定子で使用されます
+  
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10): warning C4473: 'scanf_s': 書式文字列として渡された引数が不足しています
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10):
+      プレースホルダーとそのパラメーターには 2 の可変個引数が必要ですが、1 が指定されています。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10):
+      不足している可変個引数 2 が書式文字列 '%s' に必要です
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(18,10):
+      この引数はバッファー サイズとして使用されます
+  
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(19,2): error C2664: 'void strchar(char [])': 引数 1 を 'char *[100]' から 'char []' へ変換できません。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(19,10):
+      指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたはかっこで囲まれた関数スタイル キャストが必要です。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(5,6):
+      'strchar' の宣言を確認してください
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(19,2):
+      引数リスト '(char *[100])' を一致させようとしているとき
+  
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(20,10): error C2664: 'size_t strlen(const char *)': 引数 1 を 'char *[100]' から 'const char *' へ変換できません。
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(20,17):
+      指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたはかっこで囲まれた関数スタイル キャストが必要です。
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\string.h(215,16):
+      'strlen' の宣言を確認してください
+      C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(20,10):
+      引数リスト '(char *[100])' を一致させようとしているとき
+  
+C:\Users\universitypcryusei\Documents\workspace\VisualStudio\unit\unit7-C\unit7-C\main.cpp(20,8): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
